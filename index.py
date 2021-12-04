@@ -11,12 +11,30 @@ app.layout = html.Div([
     html.Div(id='page-content')
 ])
 
+# Menu
 index_page = html.Div([
-    dcc.Link('About Me', href='/apps/about-me'), html.Br(), 
-    dcc.Link('Forecasting', href='/apps/forecasting'), html.Br(), 
-    dcc.Link('NIALM', href='/apps/nialm'), html.Br(), 
-    dcc.Link('Super-resolution', href='/apps/super-resolution'), html.Br(), 
-    dcc.Link('terraNova', href='/apps/terra-nova'), html.Br(), 
+    dcc.Link('About Me', href='/apps/about-me'), 
+    html.Br(), 
+    dcc.Link(
+        html.Img(src=app.get_asset_url('forecasting.png')), 
+        href='/apps/forecasting'
+    ), 
+    dcc.Link(
+        html.Img(src=app.get_asset_url('nialm.png')), 
+        href='/apps/nialm', 
+        style={"margin-left": "15px"}
+    ), 
+    dcc.Link(
+        html.Img(src=app.get_asset_url('super_resolution.png')), 
+        href='/apps/super-resolution', 
+        style={"margin-left": "15px"}
+    ), 
+    dcc.Link(
+        html.Img(src=app.get_asset_url('terra_nova.png')), 
+        href='/apps/terra-nova', 
+        style={"margin-left": "15px"}
+    ), 
+    html.Br(), 
     dcc.Link('Test', href='/apps/test')
 ])
 
